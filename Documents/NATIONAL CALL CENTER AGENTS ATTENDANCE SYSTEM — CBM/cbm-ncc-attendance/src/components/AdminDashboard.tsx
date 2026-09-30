@@ -225,6 +225,7 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
 
       <AdminSettingsPanel
         agents={overview?.agents.map((agent) => ({ id: agent.agentId, fullName: agent.fullName })) ?? []}
+        onRefresh={refresh}
       />
     </section>
   )
