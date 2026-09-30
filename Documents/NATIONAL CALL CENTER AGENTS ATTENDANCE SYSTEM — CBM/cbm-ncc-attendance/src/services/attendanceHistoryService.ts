@@ -52,7 +52,7 @@ export async function fetchAgentAttendanceHistory(agentId: string): Promise<Agen
     supabase
       .from('system_settings')
       .select('id, resumption_time, closing_time, late_threshold_minutes, updated_by, updated_at')
-      .eq('id', 1)
+      .limit(1)
       .maybeSingle(),
   ])
 
@@ -93,5 +93,5 @@ export async function fetchAgentAttendanceHistory(agentId: string): Promise<Agen
       status: exception ? 'excused' : isLate ? 'late' : 'present',
       exceptionNote: exception?.note ?? null,
     }
-  })
+  }) 
 }
