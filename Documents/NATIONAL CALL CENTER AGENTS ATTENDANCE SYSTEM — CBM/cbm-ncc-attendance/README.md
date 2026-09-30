@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CBM NCC Attendance
+
+Next.js App Router application using Supabase Auth and the Supabase `profiles` table.
+
+## Supabase setup
+
+Copy `.env.local.example` to `.env.local`. Set `NEXT_PUBLIC_SUPABASE_URL` to the project root URL (`https://<project-ref>.supabase.co`) and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to the project's publishable/anon key. Do not put a service-role key in this app or in any `NEXT_PUBLIC_` variable.
+
+Apply `supabase/migrations/20260930_admin_settings_and_exceptions.sql` to the Supabase project before using shift configuration, excused permissions, or attendance-history status calculations. It creates the singleton `system_settings` row and `attendance_exceptions` table with role-aware row-level security.
 
 ## Getting Started
 
